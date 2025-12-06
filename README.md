@@ -2,6 +2,10 @@
 
 AI-powered vacation planning assistant built with React, Vite, Hono, and Cloudflare Workers.
 
+## Demo
+
+Try it out: **[https://cf-ai-kevinsong.kevins11373.workers.dev/](https://cf-ai-kevinsong.kevins11373.workers.dev/)**
+
 ## Features
 
 - Chat-based vacation planning with AI assistance
@@ -25,7 +29,7 @@ npm run dev
 
 The application will be available at http://localhost:5173.
 
-## Production
+## Building
 
 Build for production:
 
@@ -33,13 +37,21 @@ Build for production:
 npm run build
 ```
 
-Preview the build locally:
+Preview the production build locally:
 
 ```bash
 npm run preview
 ```
 
-Deploy to Cloudflare Workers:
+> **Note:** The build and preview commands work without a Cloudflare account. However, some features (like AI chat and KV storage) require Cloudflare Workers and won't work in local preview mode.
+
+## Deployment
+
+To deploy your own instance, you'll need a Cloudflare account with Workers enabled:
+
+1. Set up your Cloudflare account and create KV namespaces
+2. Update `wrangler.json` with your own KV namespace IDs
+3. Deploy:
 
 ```bash
 npm run build && npm run deploy
