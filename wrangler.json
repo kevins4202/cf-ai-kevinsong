@@ -11,5 +11,15 @@
 	"assets": {
 		"directory": "./dist/client",
 		"not_found_handling": "single-page-application"
-	}
+	},
+	"ai": {
+		"binding": "AI"
+	},
+	"kv_namespaces": [
+		{
+			"binding": "CHAT_HISTORY",
+			"id": "f622e8ee47754cd794545a1428429faa",
+			"preview_id": "d8f150204c744eb2b4cce7e9f50240b2"
+		}
+	]
 }
