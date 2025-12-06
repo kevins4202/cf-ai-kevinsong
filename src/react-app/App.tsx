@@ -27,6 +27,7 @@ function App() {
 	const [newlyCreatedPasskey, setNewlyCreatedPasskey] = useState<string>("");
 	const [copiedPasskey, setCopiedPasskey] = useState(false);
 	const messagesEndRef = useRef<HTMLDivElement>(null);
+	const inputRef = useRef<HTMLInputElement>(null);
 
 	useEffect(() => {
 		const storedPasskey = localStorage.getItem(PASSKEY_STORAGE_KEY);
@@ -224,6 +225,7 @@ function App() {
 			]);
 		} finally {
 			setIsLoading(false);
+			inputRef.current?.focus();
 		}
 	};
 
@@ -309,6 +311,7 @@ function App() {
 				</div>
 				<div className="input-container">
 					<input
+						ref={inputRef}
 						type="text"
 						value={input}
 						onChange={(e) => setInput(e.target.value)}
